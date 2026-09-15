@@ -321,10 +321,11 @@ spec:
                 type: object
               sourceRanges:
                 description: sourceRanges an optional list of CIDRs that are allowed
-                  to access the LB.
+                  to access the LB. IPv4 and IPV6 CIDRs are canonicalized.
                 items:
                   type: string
                 type: array
+                default: 0.0.0.0/0 and ::/0. When sourceRanges is specified, the default values are overridden.
               tags:
                 additionalProperties:
                   type: string
